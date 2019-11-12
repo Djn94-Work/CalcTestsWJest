@@ -1,7 +1,6 @@
 class Calculator {
-  constructor(a, answ) {
+  constructor(a) {
     this.a = a;
-    this.answ = answ;
   }
   return() {
     return this;
@@ -27,8 +26,7 @@ class Calculator {
     return this;
   }
   equals() {
-    this.answ = this.a;
-    return this.answ;
+    return this.a;
   }
 }
 console.log(
