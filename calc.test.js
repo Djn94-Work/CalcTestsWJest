@@ -1,5 +1,5 @@
 describe("Calculator", () => {
-  test.todo('has a getter on "register" called "equals"'),
+  test.todo('has a setter on "register" called "equals"'),
     () => {
       const subject = new Calculator(5).expect(subject.equals).toBeDefined();
     };
@@ -60,5 +60,11 @@ describe("Calculator Functionality", () => {
   test.todo("Check 666 divided by 1"),
     () => {
       expect(new Calculator(666).divide(1)).toBe(666);
+    };
+});
+describe("Calculator Functionality", () => {
+  test.todo("Check 666 divided by 2 equals 666"),
+    () => {
+      expect(new Calculator(666).divide(2).equals()).toBe(333);
     };
 });
