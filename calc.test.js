@@ -1,4 +1,4 @@
-describe("Calculator", () => {
+describe("Calculator has methods", () => {
   test.todo('has a setter on "register" called "equals"'),
     () => {
       const subject = new Calculator(5).expect(subject.equals).toBeDefined();
@@ -25,7 +25,7 @@ describe("Calculator", () => {
     };
 });
 
-describe("Calculator Functionality", () => {
+describe("Calculator Method Functionality", () => {
   test.todo("Check 2 plus 3"),
     () => {
       expect(new Calculator(2).add(3)).toBe(5);
