@@ -28,6 +28,7 @@ class Calculator {
   equals() {
     return this.a;
   }
+  RPN() {}
 }
 console.log(
   new Calculator(5)
