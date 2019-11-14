@@ -43,8 +43,12 @@ class Rpncalc {
             answer.push(newAnswer);
             break;
           case "/":
-            answer.push(tempNumbers[0] / tempNumbers[1]);
+            console.log(answer);
+            let divAnswer = answer / tempNumbers[0];
+            answer.length = 0;
+            answer.push(divAnswer);
             break;
+
           default:
             answer.push(0);
         }
@@ -59,7 +63,7 @@ class Rpncalc {
   }
 }
 
-new Rpncalc().rpn("1 2 + 2 *");
+new Rpncalc().rpn("1 2 + 2 * 3 /");
 
 class Calculator {
   constructor(a) {
