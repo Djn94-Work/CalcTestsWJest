@@ -2,7 +2,8 @@ const tempNumbers = []; //to store the current list of numbers to be operated on
 let answer = []; //to be concatenated at the end to return result
 let result = 0;
 let addedNum = 0;
-let subtractedNum = 0;
+let subtractedNum;
+
 class Rpncalc {
   constructor() {}
   rpn(string) {
@@ -31,12 +32,8 @@ class Rpncalc {
             answer.push(addedNum); //push addedNum to answer to eb calculated array
             break;
           case "-":
-            console.log(tempNumbers.length);
-            for (i = 0; i < tempNumbers.length; i++) {
-              subtractedNum -= tempNumbers[i];
-              tempNumbers.length = 0;
-            }
-            answer.push(subtractedNum);
+            answer.push(tempNumbers[0] - tempNumbers[1]);
+            console.log("you subtracted!");
             break;
           case "*":
             answer.push(tempNumbers[0] * tempNumbers[1]);
@@ -58,7 +55,7 @@ class Rpncalc {
   }
 }
 
-new Rpncalc().rpn("1 2 +");
+new Rpncalc().rpn("20 12 -");
 
 class Calculator {
   constructor(a) {
