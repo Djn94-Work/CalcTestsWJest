@@ -19,16 +19,16 @@ class Rpncalc {
       if (operators.includes(newString[i])) {
         //when the operator is hit
         let operator = newString[i]; //Pull the operator
-        console.log(tempNumbers.length);
         switch (
           operator //apply operator to numbers within tempNumbers Array
         ) {
           case "+":
             for (i = 0; i < tempNumbers.length; i++) {
-              addedNum += tempNumbers[i];
-              tempNumbers.length = 0;
+              //length of numbers to be added
+              addedNum += tempNumbers[i]; //increment addedNum var by every tempNum
             }
-            answer.push(addedNum);
+            tempNumbers.length = 0; //clear tempNum
+            answer.push(addedNum); //push addedNum to answer to eb calculated array
             break;
           case "-":
             console.log(tempNumbers.length);
