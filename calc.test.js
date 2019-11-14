@@ -55,18 +55,18 @@ describe("Calculator Method Functionality", () => {
 describe("Calculator RPN Functionality", () => {
   test.todo("Check 1 plus 2"),
     () => {
-      expect(new Calculator().rpn("1 2 +")).toBe(3);
+      expect(new Rpncalc().rpn("1 2 +")).toBe(3);
     };
   test.todo("Check 1 plus 2 minus 3"),
     () => {
-      expect(new Calculator().rpn("1 2 + 3 -")).toBe(0);
+      expect(new Rpncalc().rpn("1 2 + 3 -")).toBe(0);
     };
   test.todo("Check 1 plus 2 times 6"),
     () => {
-      expect(new Calculator().rpn("1 2 + 6 *")).toBe(18);
+      expect(new Rpncalc().rpn("1 2 + 6 *")).toBe(18);
     };
   test.todo("Check 1 plus 2 times 6 divided by 2"),
     () => {
-      expect(new Calculator().rpn("1 2 + 6 * 2 /")).toBe(9);
+      expect(new Rpncalc().rpn("1 2 + 6 * 2 /")).toBe(9);
     };
 });

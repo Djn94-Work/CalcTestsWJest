@@ -1,30 +1,55 @@
+const tempNumbers = []; //to store the current list of numbers to be operated on
+let answer = []; //to be concatenated at the end to return result
+
 class Rpncalc {
   constructor() {}
   rpn(string) {
     let newString = string.split(" "); //removes spaces, returns
     for (let i = 0; i < newString.length; i++) {
       //iterate through the given problem
-      let answer = []; //
-      let tempNumbers = []; //to store the current list of numbers to be operated on
-      let operators = ["+", "-", "/", "*"]; //operator array
+      let operators = ["+", "-", "/", "*"]; //operator
       if (!operators.includes(newString[i])) {
         //if the input is a number not a sign
         let stringnum = parseInt(newString[i]); //turn the string into a number
-        tempNumbers.push(stringnum); // add current numbers until an operator is hit
+        tempNumbers.push(stringnum);
+        console.log(tempNumbers);
+        // add current numbers until an operator is hit
       }
       if (operators.includes(newString[i])) {
         //when the operator is hit
         let operator = newString[i]; //Pull the operator
-        let tempAnswer = tempNumbers[0] + operator + tempNumbers[1]; //Calculate the answer chunk
-        // console.log(newString[i] + "is an operator");
-        answer.push(tempAnswer);
-        //apply operator to numbers within tempNumbers Array
-        //Take result and incorporate into answer variable
+
+        console.log(operator);
+        switch (
+          operator //apply operator to numbers within tempNumbers Array
+        ) {
+          case "+":
+            answer.push(tempNumbers[0] + tempNumbers[1]);
+            console.log("you added!");
+            break;
+          case "-":
+            answer.push(tempNumbers[0] - tempNumbers[1]);
+            console.log("you added!");
+            break;
+          case "*":
+            answer.push(tempNumbers[0] * tempNumbers[1]);
+            console.log("you added!");
+            break;
+          case "/":
+            answer.push(tempNumbers[0] / tempNumbers[1]);
+            console.log("you added!");
+            break;
+          default:
+            answer.push(0);
+        }
+        //Take result and incorporate into answer array
       }
     }
+    console.log(answer);
   }
 }
-console.log(new Rpncalc().rpn("1 2 +"));
+
+new Rpncalc().rpn("1 2 +");
 
 class Calculator {
   constructor(a) {
