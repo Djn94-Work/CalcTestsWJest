@@ -1,5 +1,8 @@
 const tempNumbers = []; //to store the current list of numbers to be operated on
 let answer = []; //to be concatenated at the end to return result
+let result = 0;
+let addedNum = 0;
+let subtractedNum = 0;
 
 class Rpncalc {
   constructor() {}
@@ -12,32 +15,41 @@ class Rpncalc {
         //if the input is a number not a sign
         let stringnum = parseInt(newString[i]); //turn the string into a number
         tempNumbers.push(stringnum);
-        console.log(tempNumbers);
+        // console.log(tempNumbers);
         // add current numbers until an operator is hit
       }
       if (operators.includes(newString[i])) {
         //when the operator is hit
         let operator = newString[i]; //Pull the operator
 
-        console.log(operator);
+        // console.log(operator);
         switch (
           operator //apply operator to numbers within tempNumbers Array
         ) {
           case "+":
-            answer.push(tempNumbers[0] + tempNumbers[1]);
-            console.log("you added!");
+            for (i = 0; i < tempNumbers.length; i++) addedNum += tempNumbers[i];
+            answer.push(addedNum);
+            // console.log("you added!");
+            tempNumbers.length = 0;
+            console.log("uhhh");
             break;
           case "-":
-            answer.push(tempNumbers[0] - tempNumbers[1]);
-            console.log("you added!");
+            for (i = 0; i < tempNumbers.length; i++) {
+              subtractedNum -= tempNumbers[i];
+              console.log(subtractedNum);
+              answer.push(subtractedNum);
+              console.log("subtracted");
+              // console.log("you added!");
+              tempNumbers.length = 0;
+            }
             break;
           case "*":
             answer.push(tempNumbers[0] * tempNumbers[1]);
-            console.log("you added!");
+            // console.log("you multiplied!");
             break;
           case "/":
             answer.push(tempNumbers[0] / tempNumbers[1]);
-            console.log("you added!");
+            // console.log("you divided!");
             break;
           default:
             answer.push(0);
@@ -45,11 +57,15 @@ class Rpncalc {
         //Take result and incorporate into answer array
       }
     }
-    console.log(answer);
+    for (let i = 0; i < answer.length; i++) {
+      result += answer[i];
+      // console.log('here you go it"s the ' + result);
+    }
+    console.log(result);
   }
 }
 
-new Rpncalc().rpn("1 2 +");
+new Rpncalc().rpn("1 2 3 4 5 -");
 
 class Calculator {
   constructor(a) {

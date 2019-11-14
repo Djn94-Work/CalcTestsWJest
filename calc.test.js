@@ -69,4 +69,24 @@ describe("Calculator RPN Functionality", () => {
     () => {
       expect(new Rpncalc().rpn("1 2 + 6 * 2 /")).toBe(9);
     };
+  test.todo("Add more than 2 numbers"),
+    () => {
+      expect(new Rpncalc().rpn("1 2 3 4 5 +")).toBe(15);
+    };
+  test.todo("Subtract more than 2 numbers"),
+    () => {
+      expect(new Rpncalc().rpn("1 2 3 4 5 -")).toBe(-13);
+    };
+  test.todo("Multiply more than 2 numbers"),
+    () => {
+      expect(new Rpncalc().rpn("1 2 3 *")).toBe(6);
+    };
+  test.todo("Divide more than 2 numbers"),
+    () => {
+      expect(new Rpncalc().rpn("60 30 2")).toBe(1);
+    };
+  test.todo("Combine all operators"),
+    () => {
+      expect(new Rpncalc().rpn("1 2 + 3 - 2 + 4 * 4 /")).toBe(2);
+    };
 });
