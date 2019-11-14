@@ -3,7 +3,6 @@ let answer = []; //to be concatenated at the end to return result
 let result = 0;
 let addedNum = 0;
 let subtractedNum = 0;
-
 class Rpncalc {
   constructor() {}
   rpn(string) {
@@ -15,41 +14,35 @@ class Rpncalc {
         //if the input is a number not a sign
         let stringnum = parseInt(newString[i]); //turn the string into a number
         tempNumbers.push(stringnum);
-        // console.log(tempNumbers);
         // add current numbers until an operator is hit
       }
       if (operators.includes(newString[i])) {
         //when the operator is hit
         let operator = newString[i]; //Pull the operator
-
-        // console.log(operator);
+        console.log(tempNumbers.length);
         switch (
           operator //apply operator to numbers within tempNumbers Array
         ) {
           case "+":
-            for (i = 0; i < tempNumbers.length; i++) addedNum += tempNumbers[i];
-            answer.push(addedNum);
-            // console.log("you added!");
-            tempNumbers.length = 0;
-            console.log("uhhh");
-            break;
-          case "-":
             for (i = 0; i < tempNumbers.length; i++) {
-              subtractedNum -= tempNumbers[i];
-              console.log(subtractedNum);
-              answer.push(subtractedNum);
-              console.log("subtracted");
-              // console.log("you added!");
+              addedNum += tempNumbers[i];
               tempNumbers.length = 0;
             }
+            answer.push(addedNum);
+            break;
+          case "-":
+            console.log(tempNumbers.length);
+            for (i = 0; i < tempNumbers.length; i++) {
+              subtractedNum -= tempNumbers[i];
+              tempNumbers.length = 0;
+            }
+            answer.push(subtractedNum);
             break;
           case "*":
             answer.push(tempNumbers[0] * tempNumbers[1]);
-            // console.log("you multiplied!");
             break;
           case "/":
             answer.push(tempNumbers[0] / tempNumbers[1]);
-            // console.log("you divided!");
             break;
           default:
             answer.push(0);
@@ -65,7 +58,7 @@ class Rpncalc {
   }
 }
 
-new Rpncalc().rpn("1 2 3 4 5 -");
+new Rpncalc().rpn("1 2 +");
 
 class Calculator {
   constructor(a) {
