@@ -36,7 +36,11 @@ class Rpncalc {
             console.log("you subtracted!");
             break;
           case "*":
-            answer.push(tempNumbers[0] * tempNumbers[1]);
+            //take answer and multiply, set answer to new answer
+            console.log(answer);
+            let newAnswer = answer * tempNumbers[0];
+            answer.length = 0;
+            answer.push(newAnswer);
             break;
           case "/":
             answer.push(tempNumbers[0] / tempNumbers[1]);
@@ -55,7 +59,7 @@ class Rpncalc {
   }
 }
 
-new Rpncalc().rpn("20 12 -");
+new Rpncalc().rpn("1 2 + 2 *");
 
 class Calculator {
   constructor(a) {
